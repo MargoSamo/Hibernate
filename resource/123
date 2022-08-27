@@ -10,11 +10,11 @@
             This class contains the employee detail.
         </meta>-->
 
-        <id name = "id" column = "id">
+        <id name = "id" type = "int" column = "id">
             <generator class="native"/>
         </id>
 
-        <property name = "name"  />
+        <property name = "name" column = "name" type = "string"/>
 
     </class>
 </hibernate-mapping>
