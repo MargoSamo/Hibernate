@@ -1,15 +1,17 @@
 package com.mariia.entities;
 
 import javax.persistence.*;
+import java.util.List;
 
-@Entity
+//@Entity
+@Embeddable
 public class HomeAddress {
-    @Id
-    @GeneratedValue
-    int id;
+//    @Id
+//    @GeneratedValue
+//    int id;
     String street;
-    @ManyToOne
-    Person person;
+//    @ManyToMany
+//    List<Person> person;
 
     public HomeAddress() {
     }
@@ -18,9 +20,9 @@ public class HomeAddress {
         this.street = street;
     }
 
-    public void setPerson(Person person) {
-        this.person = person;
-    }
+//    public void setPerson(List<Person> person) {
+//        this.person = person;
+//    }
 
 //    public String getStreet() {
 //        return street;
