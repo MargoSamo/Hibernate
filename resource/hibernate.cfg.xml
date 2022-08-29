@@ -14,8 +14,8 @@
 <!--        <mapping resource="entities/Book.hdm.xml" />-->
 <!--        <mapping class="com.mariia.entities.HomeAddress" />-->
         <mapping class="com.mariia.entities.hierarchies.Car" />
-        <mapping class="com.mariia.entities.hierarchies.Opel" />
-        <mapping class="com.mariia.entities.hierarchies.Toyota" />
+<!--        <mapping class="com.mariia.entities.hierarchies.Opel" />-->
+<!--        <mapping class="com.mariia.entities.hierarchies.Toyota" />-->
 
     </session-factory>
 </hibernate-configuration>

@@ -2,6 +2,7 @@ import com.mariia.entities.*;
 import com.mariia.entities.hierarchies.Car;
 import com.mariia.entities.hierarchies.Opel;
 import com.mariia.entities.hierarchies.Toyota;
+import org.hibernate.LockMode;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.MetadataSources;
@@ -31,7 +32,7 @@ public class Main {
                 @Override
                 public void run() {
                     session.beginTransaction();
-                    Car car = session.load(Car.class, carId);
+                    Car car = session.load(Car.class, carId, LockMode.PESSIMISTIC_WRITE);
                     car.setNumber(car.getNumber() + "4");
                     try {Thread.sleep(400);}
                     catch (InterruptedException e) {}
@@ -43,7 +44,7 @@ public class Main {
                 @Override
                 public void run() {
                     session2.beginTransaction();
-                    Car car = session2.load(Car.class, carId);
+                    Car car = session2.load(Car.class, carId, LockMode.PESSIMISTIC_WRITE);
                     car.setNumber(car.getNumber() + "5");
                     session.getTransaction().commit();
                 }
